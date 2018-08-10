@@ -1,0 +1,746 @@
+
+<!DOCTYPE html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/25F6F6EB-EEDF-AE42-9569-54E0DBEE116A/main.js" charset="UTF-8"></script><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[f.now()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,t){s[t]=o(d+t,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(l+"tracer",[f.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return t.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],n),e}finally{c.emit("fn-end",[f.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=o(l+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,f.now()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],4:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o,i){if(!d.aborted||i){e&&e(n,r,o);for(var a=t(o),u=m(n),c=u.length,f=0;f<c;f++)u[f].apply(a,r);var p=s[y[n]];return p&&p.push([b,n,r,a]),a}}function l(e,t){v[e]=m(e).concat(t)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(n)}function g(e,t){f(e,function(e,n){t=t||"feature",y[n]=t,t in s||(s[t]=[])})}var v={},y={},b={on:l,emit:n,get:w,listeners:m,context:t,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},p={},d=t.exports=o();d.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!x++){var e=h.info=NREUM.info,t=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return s.abort();f(y,function(t,n){e[t]||(e[t]=n)}),c("mark",["onload",a()+h.offset],null,"api");var n=d.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),c=e("handle"),f=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1071.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=t.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),c("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+		<meta name="viewport" content="width=device-width" />
+		<title>Facing Hunger? Find Free Food Near You | Philabundance</title>
+		<link rel="profile" href="http://gmpg.org/xfn/11" />
+		<link rel="pingback" href="https://www.philabundance.org/xmlrpc.php"/>
+		
+<!-- This site is optimized with the Yoast SEO plugin v7.9 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="Find free food resources in your area. Locate a local agency, free food distribution, or other hunger relief resource in the Philadelphia area."/>
+<link rel="canonical" href="https://www.philabundance.org/find-food/" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Facing Hunger? Find Free Food Near You | Philabundance" />
+<meta property="og:description" content="Find free food resources in your area. Locate a local agency, free food distribution, or other hunger relief resource in the Philadelphia area." />
+<meta property="og:url" content="https://www.philabundance.org/find-food/" />
+<meta property="og:site_name" content="Philabundance" />
+<meta property="article:publisher" content="https://www.facebook.com/Philabundance/" />
+<meta property="og:image" content="https://www.philabundance.org/wp-content/uploads/2018/06/Homepage-SEO-FB.jpg" />
+<meta property="og:image:secure_url" content="https://www.philabundance.org/wp-content/uploads/2018/06/Homepage-SEO-FB.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="600" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:description" content="Find free food resources in your area. Locate a local agency, free food distribution, or other hunger relief resource in the Philadelphia area." />
+<meta name="twitter:title" content="Facing Hunger? Find Free Food Near You | Philabundance" />
+<meta name="twitter:site" content="@philabundance" />
+<meta name="twitter:image" content="http://www.philabundance.org/wp-content/uploads/2018/06/Homepage-SEO-FB.jpg" />
+<meta name="twitter:creator" content="@philabundance" />
+<script type='application/ld+json'>{"@context":"https:\/\/schema.org","@type":"Organization","url":"https:\/\/www.philabundance.org\/","sameAs":["https:\/\/www.facebook.com\/Philabundance\/","https:\/\/www.instagram.com\/philabundance\/","https:\/\/www.linkedin.com\/company\/360791\/","https:\/\/www.youtube.com\/channel\/UCYaiX3vLIIc9PyspRo89yOg","https:\/\/twitter.com\/philabundance"],"@id":"https:\/\/www.philabundance.org\/#organization","name":"Philabundance","logo":"https:\/\/www.philabundance.org\/wp-content\/uploads\/2017\/09\/logo2.jpg"}</script>
+<!-- / Yoast SEO plugin. -->
+
+<link rel='dns-prefetch' href='//www.philabundance.org' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel='stylesheet' id='mf_webfonts_3441677-css'  href='https://www.philabundance.org/wp-content/plugins/MyFontsWebfontsKit/MyFontsWebfontsKit.css?ver=4.9.8' type='text/css' media='all' />
+<link rel='stylesheet' id='abc_style-css'  href='https://www.philabundance.org/wp-content/plugins/advanced-browser-check/css/style.css?ver=4.9.8' type='text/css' media='all' />
+<link rel='stylesheet' id='owl_style-css'  href='https://www.philabundance.org/wp-content/plugins/enjoy-instagram-premium/css/owl.carousel.min.css?ver=4.9.8' type='text/css' media='all' />
+<link rel='stylesheet' id='owl_style_default-css'  href='https://www.philabundance.org/wp-content/plugins/enjoy-instagram-premium/css/owl.theme.default.min.css?ver=4.9.8' type='text/css' media='all' />
+<link rel='stylesheet' id='owl_style_2-css'  href='https://www.philabundance.org/wp-content/plugins/enjoy-instagram-premium/css/owl.theme.min.css?ver=4.9.8' type='text/css' media='all' />
+<link rel='stylesheet' id='owl_style_3-css'  href='https://www.philabundance.org/wp-content/plugins/enjoy-instagram-premium/css/owl.transitions.min.css?ver=4.9.8' type='text/css' media='all' />
+<link rel='stylesheet' id='swipebox_css-css'  href='https://www.philabundance.org/wp-content/plugins/enjoy-instagram-premium/css/swipebox.min.css?ver=4.9.8' type='text/css' media='all' />
+<link rel='stylesheet' id='grid_fallback-css'  href='https://www.philabundance.org/wp-content/plugins/enjoy-instagram-premium/css/grid_fallback.min.css?ver=4.9.8' type='text/css' media='all' />
+<link rel='stylesheet' id='grid_style-css'  href='https://www.philabundance.org/wp-content/plugins/enjoy-instagram-premium/css/grid_style.min.css?ver=4.9.8' type='text/css' media='all' />
+<link rel='stylesheet' id='animate-css'  href='https://www.philabundance.org/wp-content/plugins/enjoy-instagram-premium/css/animate.min.css?ver=4.9.8' type='text/css' media='all' />
+<link rel='stylesheet' id='accordion-css'  href='https://www.philabundance.org/wp-content/plugins/enjoy-instagram-premium/css/accordion.min.css?ver=4.9.8' type='text/css' media='all' />
+<link rel='stylesheet' id='component-css'  href='https://www.philabundance.org/wp-content/plugins/enjoy-instagram-premium/css/component.min.css?ver=4.9.8' type='text/css' media='all' />
+<link rel='stylesheet' id='normalize-css'  href='https://www.philabundance.org/wp-content/plugins/enjoy-instagram-premium/css/normalize.min.css?ver=4.9.8' type='text/css' media='all' />
+<link rel='stylesheet' id='style_stapel_1-css'  href='https://www.philabundance.org/wp-content/plugins/enjoy-instagram-premium/css/custom_stapel.min.css?ver=4.9.8' type='text/css' media='all' />
+<link rel='stylesheet' id='style_stapel_3-css'  href='https://www.philabundance.org/wp-content/plugins/enjoy-instagram-premium/css/stapel.min.css?ver=4.9.8' type='text/css' media='all' />
+<link rel='stylesheet' id='enin_badge-css'  href='https://www.philabundance.org/wp-content/plugins/enjoy-instagram-premium/css/enin-badge.min.css?ver=4.9.8' type='text/css' media='all' />
+<link rel='stylesheet' id='sb_instagram_styles-css'  href='https://www.philabundance.org/wp-content/plugins/instagram-feed-pro/css/sb-instagram.css?ver=2.9.6' type='text/css' media='all' />
+<link rel='stylesheet' id='bodhi-svgs-attachment-css'  href='https://www.philabundance.org/wp-content/plugins/svg-support/css/svgs-attachment.css?ver=4.9.8' type='text/css' media='all' />
+<link rel='stylesheet' id='wpsl-styles-css'  href='https://www.philabundance.org/wp-content/plugins/wp-store-locator/css/styles.min.css?ver=2.2.15' type='text/css' media='all' />
+<link rel='stylesheet' id='foundation-grid-css'  href='https://www.philabundance.org/wp-content/themes/push10custom/bower_components/foundation-sites/css/foundation-flex.css?ver=0.46' type='text/css' media='all' />
+<link rel='stylesheet' id='maincss-css'  href='https://www.philabundance.org/wp-content/themes/push10custom/assets/css/main.css?ver=0.46' type='text/css' media='all' />
+<link rel='stylesheet' id='header-css'  href='https://www.philabundance.org/wp-content/themes/push10custom/p10modules/modules/header/css/styles.css?ver=0.46' type='text/css' media='all' />
+<link rel='stylesheet' id='banner-search-css'  href='https://www.philabundance.org/wp-content/themes/push10custom/p10modules/modules/banner_search/css/styles.css?ver=0.46' type='text/css' media='all' />
+<link rel='stylesheet' id='two-cols-single-css'  href='https://www.philabundance.org/wp-content/themes/push10custom/p10modules/modules/two_cols_single/css/styles.css?ver=0.46' type='text/css' media='all' />
+<link rel='stylesheet' id='grid_links-css'  href='https://www.philabundance.org/wp-content/themes/push10custom/p10modules/modules/grid_links/css/styles.css?ver=0.46' type='text/css' media='all' />
+<link rel='stylesheet' id='grid_text-css'  href='https://www.philabundance.org/wp-content/themes/push10custom/p10modules/modules/grid_text/css/styles.css?ver=0.46' type='text/css' media='all' />
+<link rel='stylesheet' id='footer-css'  href='https://www.philabundance.org/wp-content/themes/push10custom/p10modules/modules/footer/css/styles.css?ver=0.46' type='text/css' media='all' />
+<link rel='stylesheet' id='addtoany-css'  href='https://www.philabundance.org/wp-content/plugins/add-to-any/addtoany.min.css?ver=1.14' type='text/css' media='all' />
+<script type='text/javascript' src='https://www.philabundance.org/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='https://www.philabundance.org/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<script type='text/javascript' src='https://www.philabundance.org/wp-content/plugins/add-to-any/addtoany.min.js?ver=1.0'></script>
+<script type='text/javascript' src='https://www.philabundance.org/wp-content/plugins/advanced-browser-check/js/jquery.cookie.js?ver=4.9.8'></script>
+<script type='text/javascript' src='https://www.philabundance.org/wp-content/plugins/advanced-browser-check/js/script.js?ver=4.9.8'></script>
+<script type='text/javascript' src='https://www.philabundance.org/wp-content/plugins/enjoy-instagram-premium/js/owl.carousel.min.js?ver=4.9.8'></script>
+<script type='text/javascript' src='https://www.philabundance.org/wp-content/plugins/enjoy-instagram-premium/js/jquery.swipebox.min.js?ver=4.9.8'></script>
+<script type='text/javascript' src='https://www.philabundance.org/wp-content/plugins/enjoy-instagram-premium/js/modernizr.custom.26633.min.js?ver=4.9.8'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var GridRotator = {"pluginsUrl":"https:\/\/www.philabundance.org\/wp-content\/plugins"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.philabundance.org/wp-content/plugins/enjoy-instagram-premium/js/jquery.gridrotator.min.js?ver=4.9.8'></script>
+<script type='text/javascript' src='https://www.philabundance.org/wp-content/plugins/enjoy-instagram-premium/js/ios-orientationchange-fix.min.js?ver=4.9.8'></script>
+<script type='text/javascript' src='https://www.philabundance.org/wp-content/plugins/enjoy-instagram-premium/js/modernizr.min.js?ver=4.9.8'></script>
+<script type='text/javascript' src='https://www.philabundance.org/wp-content/plugins/enjoy-instagram-premium/js/classie.min.js?ver=4.9.8'></script>
+<script type='text/javascript' src='https://www.philabundance.org/wp-content/plugins/enjoy-instagram-premium/js/photostack.min.js?ver=4.9.8'></script>
+<script type='text/javascript' src='https://www.philabundance.org/wp-content/plugins/enjoy-instagram-premium/js/jquery.stapel.min.js?ver=4.9.8'></script>
+<script type='text/javascript' src='https://www.philabundance.org/wp-content/plugins/enjoy-instagram-premium/js/modernizr.custom.63321.min.js?ver=4.9.8'></script>
+<link rel='https://api.w.org/' href='https://www.philabundance.org/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.philabundance.org/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.philabundance.org/wp-includes/wlwmanifest.xml" /> 
+<link rel='shortlink' href='https://www.philabundance.org/?p=13' />
+<link rel="alternate" type="application/json+oembed" href="https://www.philabundance.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.philabundance.org%2Ffind-food%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.philabundance.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.philabundance.org%2Ffind-food%2F&#038;format=xml" />
+
+<script data-cfasync="false">
+window.a2a_config=window.a2a_config||{};a2a_config.callbacks=[];a2a_config.overlays=[];a2a_config.templates={};
+(function(d,s,a,b){a=d.createElement(s);b=d.getElementsByTagName(s)[0];a.async=1;a.src="https://static.addtoany.com/menu/page.js";b.parentNode.insertBefore(a,b);})(document,"script");
+</script>
+   <script type="text/javascript">
+
+		jQuery(function(){
+		  jQuery(document.body)
+			  .on('click touchend','#swipebox-slider .current img', function(e){
+				  jQuery('#swipebox-next').click();
+				  return false;
+			  })
+				.on('click touchend','video', function(e){
+					jQuery('video').play();
+					return false;
+			  })
+			  .on('click touchend','#swipebox-slider .current', function(e){
+				  jQuery('#swipebox-close').trigger('click');
+			  });
+
+		});
+                /* ridimensionamento immagine profilo in badge */
+                jQuery(document).ready(function(){
+                  jQuery('#div_shortcode_badge #badge_image_profile').height(jQuery('#div_shortcode_badge #badge_image_profile').width());
+                  jQuery('#div_shortcode_badge_widget #badge_image_profile').height(jQuery('#div_shortcode_badge_widget #badge_image_profile').width());
+
+                });
+               jQuery( window ).resize(function() {
+  jQuery('#div_shortcode_badge #badge_image_profile').height(jQuery('#div_shortcode_badge #badge_image_profile').width());
+  jQuery('#div_shortcode_badge_widget #badge_image_profile').height(jQuery('#div_shortcode_badge_widget #badge_image_profile').width());
+
+});
+
+//Grid displaying after loading of images
+	function display_grid(){
+		jQuery('[id^="ei-grid-loading-"]').hide();
+		jQuery('[id^="ei-grid-list-"]').show();
+	}
+
+	window.onload = display_grid;
+
+
+</script>
+   
+<!--BEGIN: TRACKING CODE MANAGER BY INTELLYWP.COM IN HEAD//-->
+<!-- Facebook Pixel Code -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1600362486680557');
+  fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1600362486680557&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2326313-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-2326313-1', {
+  'linker': {
+    'domains': ['www.philabundance.org', 'philabundance.org', 'secure3.convio.net']
+  }
+});
+
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5NZPC6L');</script>
+<!-- End Google Tag Manager -->
+<!-- Hotjar Tracking Code for https://www.philabundance.org/ -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:676087,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+<meta name="msvalidate.01" content="1B5CBE5055D6B196E7FFBBFBC5FEB2FD" />
+<meta name="google-site-verification" content="FgE3K2ATsmiy85VaTGOzrMKJE7t8fn3YcgUTML5z_IA" />
+<!--END: https://wordpress.org/plugins/tracking-code-manager IN HEAD//--><link rel="icon" href="https://www.philabundance.org/wp-content/uploads/2017/10/cropped-favicon-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://www.philabundance.org/wp-content/uploads/2017/10/cropped-favicon-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon-precomposed" href="https://www.philabundance.org/wp-content/uploads/2017/10/cropped-favicon-180x180.png" />
+<meta name="msapplication-TileImage" content="https://www.philabundance.org/wp-content/uploads/2017/10/cropped-favicon-270x270.png" />
+<style type='text/css'></style>		<style type="text/css" id="wp-custom-css">
+			/*Advo blog "Farm Bill" block quote edit*/
+.postid-6203 .module-editor .content blockquote:before {
+    background-image:none; 
+}
+
+.postid-6203 .module-editor .content blockquote:after {
+    background-image:none;
+}
+
+/*Volunteer blog "Waste Not, Want Not" block quote edit*/
+.postid-6522 .module-editor .content blockquote:before {
+    background-image:none; 
+}
+
+.postid-6522 .module-editor .content blockquote:after {
+    background-image:none;
+}
+		</style>
+	
+	</head>
+	<body class="page-template page-template-faq page-template-faq-php page page-id-13 page-parent">
+		<div id="site">
+<header id="main-header" class="">
+<div class = "close"></div>
+    <div data-sticky-container>
+        <div class="header-inner sticky" data-sticky data-sticky-on="small" data-options="marginTop:0;" style="width:100%">
+            <div class="row header-top full-width">
+                <div class="large-12 columns">
+                    <div id="util-nav">
+                        <ul class="menu align-right align-middle">
+                                                                                                <li class="members">
+                                        <a href="https://www.philabundance.org/member-agencies/" >
+                                                                                            <div class="utility-icon">
+                                                    <svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Nav---Rollover" class="utility-icon-outline" transform="translate(-960.000000, -17.000000)" stroke-width="1.5" stroke="#5EBA46">
+            <g id="Nav---On-Load">
+                <g id="Utility" transform="translate(953.000000, 11.000000)">
+                    <path d="M17.1764865,14.1361092 C17.9994586,13.4388675 18.5262113,12.373821 18.5262113,11.1791166 C18.5262113,9.07813043 16.9004782,7.37537902 14.8945231,7.37537902 C12.8891997,7.37537902 11.262835,9.07813043 11.262835,11.1791166 C11.262835,12.4062354 11.820536,13.4944352 12.6820355,14.1903538 C9.95669043,15.1932175 8,17.9047862 8,21.1019104 L20.9477578,21.1019104 L22,21.1019104 C22,17.8492186 19.9763602,15.0953126 17.1764865,14.1361092 Z" id="Page-1"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
+                                                </div>
+                                                                                        <span class="utility-label">Member Agencies</span>
+                                        </a>
+                                    </li>
+                                                                    <li class="members">
+                                        <a href="http://www.philabundance.org/about/philabundance-community-kitchen/" >
+                                                                                            <div class="utility-icon">
+                                                    <svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Nav---Rollover" class="utility-icon-outline" transform="translate(-960.000000, -17.000000)" stroke-width="1.5" stroke="#5EBA46">
+            <g id="Nav---On-Load">
+                <g id="Utility" transform="translate(953.000000, 11.000000)">
+                    <path d="M17.1764865,14.1361092 C17.9994586,13.4388675 18.5262113,12.373821 18.5262113,11.1791166 C18.5262113,9.07813043 16.9004782,7.37537902 14.8945231,7.37537902 C12.8891997,7.37537902 11.262835,9.07813043 11.262835,11.1791166 C11.262835,12.4062354 11.820536,13.4944352 12.6820355,14.1903538 C9.95669043,15.1932175 8,17.9047862 8,21.1019104 L20.9477578,21.1019104 L22,21.1019104 C22,17.8492186 19.9763602,15.0953126 17.1764865,14.1361092 Z" id="Page-1"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
+                                                </div>
+                                                                                        <span class="utility-label">Philabundance Community Kitchen</span>
+                                        </a>
+                                    </li>
+                                                                                        <li class="translate">
+                                <a>
+                                    <label class="googletranslate">
+                                        <div class="utility-icon">
+                                                <svg width="17px" height="17px" viewBox="0 0 17 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                                    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                        <g id="Nav---Rollover" transform="translate(-1087.000000, -18.000000)" stroke-width="1" class="utility-icon-outline" stroke="#5EBA46">
+                                                            <g id="Nav---On-Load">
+                                                                <g id="Utility" transform="translate(953.000000, 11.000000)">
+                                                                    <g id="Icon---globe" transform="translate(135.000000, 8.000000)">
+                                                                        <path d="M14.879625,7.47345 C14.879625,11.56395 11.563875,14.8797 7.473375,14.8797 C3.38325,14.8797 0.067125,11.56395 0.067125,7.47345 C0.067125,3.38295 3.38325,0.0672 7.473375,0.0672 C11.563875,0.0672 14.879625,3.38295 14.879625,7.47345 Z" id="Stroke-1"></path>
+                                                                        <path d="M10.6524375,7.47345 C10.6524375,11.56395 9.2833125,14.8797 7.5939375,14.8797 C5.9045625,14.8797 4.5350625,11.56395 4.5350625,7.47345 C4.5350625,3.38295 5.9045625,0.0672 7.5939375,0.0672 C9.2833125,0.0672 10.6524375,3.38295 10.6524375,7.47345 Z" id="Stroke-3"></path>
+                                                                        <path d="M0.0678375,6.81818182 L14.9827125,6.81818182" id="Stroke-5"></path>
+                                                                        <path d="M13.35105,3.01995 C11.997675,3.7947 9.86805,4.2942 7.4733,4.2942 C5.0658,4.2942 2.926425,3.78945 1.5738,3.007575" id="Stroke-7"></path>
+                                                                        <path d="M13.35105,11.8771125 C11.997675,11.1023625 9.86805,10.6028625 7.4733,10.6028625 C5.0658,10.6028625 2.926425,11.1076125 1.5738,11.8898625" id="Stroke-9"></path>
+                                                                    </g>
+                                                                </g>
+                                                            </g>
+                                                        </g>
+                                                    </g>
+                                                </svg>
+                                        </div>
+                                        <select onchange="window.location.hash=this.options[this.selectedIndex].value; window.location.reload();" class="notranslate">
+                                            <option disabled="disabled" selected="selected" style="font-weight: bold;">English</option>
+                                            <option value="googtrans(en|en)">English</option>
+                                            <option value="googtrans(en|es)">Spanish</option>
+                                            <option value="googtrans(en|zh-CN)">Chinese Simplified</option>
+                                            <option value="googtrans(en|zh-TW)">Chinese Traditional</option>
+                                            <option value="googtrans(en|vi)">Vietnamese</option>
+                                            <option value="googtrans(en|ko)">Korean</option>
+                                            <option value="googtrans(en|ne)">Nepali</option>
+                                            <option value="googtrans(en|ht)">Haitian Creole</option>
+                                            <option value="googtrans(en|uk)">Ukrainian</option>
+                                            <option value="googtrans(en|ru)">Russian</option>
+                                            <option value="googtrans(en|ar)">Arabic</option>
+                                        </select>
+                                    </label>
+                                </a>
+                            </li>
+                            <!--<div id="google_translate_element"></div>--><script type="text/javascript">
+                            function googleTranslateElementInit() {
+                            new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'ar,en,es,ht,ko,ne,ru,uk,vi,zh-CN,zh-TW', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+                            }
+                            </script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+                            <li class="search">
+                                <a id="search-toggle">
+                                    <form role="search" method="get" id="searchform" class="searchform" action="/">
+<div class = "search-container">
+    <input type="search" value="" name="s" class="search-input" id="search-terms" placeholder="Enter Search Term">    
+    </div> 
+    <div class="form-action">
+		<input type="submit" id="searchsubmit" class="search-submit" value="Search">
+        <div id="search-toggle" class="utility-icon">
+            <svg width="16px" height="17px" viewBox="0 0 16 17" version="1.1"xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g id="Nav---Rollover" transform="translate(-1516.000000, -17.000000)">
+                        <g id="Nav---On-Load">
+                            <g id="Utility" transform="translate(953.000000, 11.000000)">
+                                <g id="Icon---Search" transform="translate(564.000000,7.000000)">
+                                    <path d="M12.1503965,6.2079337 C12.1503965,9.54804486 9.46629247,12.2558873 6.15452232,12.2558873 C2.8435941,12.2558873 0.159069079,9.54804486 0.159069079,6.2079337 C0.159069079,2.86782255 2.8435941,0.160404706 6.15452232,0.160404706 C9.46629247,0.160404706 12.1503965,2.86782255 12.1503965,6.2079337" id="Fill-1"></path>
+                                    <path class="utility-icon-outline" d="M12.1503965,6.2079337 C12.1503965,9.54804486 9.46629247,12.2558873 6.15452232,12.2558873 C2.8435941,12.2558873 0.159069079,9.54804486 0.159069079,6.2079337 C0.159069079,2.86782255 2.8435941,0.160404706 6.15452232,0.160404706 C9.46629247,0.160404706 12.1503965,2.86782255 12.1503965,6.2079337 Z" id="Stroke-3" stroke="#5EBA46" stroke-width="1.5"></path>
+                                    <path class="utility-icon-outline" d="M9.97339281,10.8705437 L14.2448791,15.1989832" id="Stroke-5" stroke="#5EBA46" stroke-width="1.5"></path>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+        </div>
+        <span class="utility-label">Search</span>
+	</div>
+</form>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+                        <div class="row header-bottom full-width align-middle">
+                <div class="large-3 columns" id="main-logo">
+                                        <a href="/"><img src="https://www.philabundance.org/wp-content/themes/push10custom/assets/imgs/logo.svg" alt="Philabundance" class="logo"/></a>                 </div>
+                <div class="large-9 columns">
+                 <div id = "menu-trigger"></div>
+                    <div id = "search-trigger"></div>
+                    <div class="row">
+                        <div class="large-12 columns align-right">
+                                                        <nav id="main-nav">
+                                <ul class="menu align-right">
+                                    <li id="menu-item-167" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-13 current_page_item menu-item-has-children menu-item-167"><a href="https://www.philabundance.org/find-food/">Find Food</a>
+<ul class="sub-menu">
+	<li id="menu-item-229" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-229"><a href="https://www.philabundance.org/find-food/free-farmers-markets/">Free Food For All</a></li>
+	<li id="menu-item-230" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-230"><a href="https://www.philabundance.org/find-food/free-food-for-kids/">Free Food for Kids</a></li>
+	<li id="menu-item-228" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-228"><a href="https://www.philabundance.org/find-food/food-support-for-seniors/">Free Food For Seniors</a></li>
+	<li id="menu-item-227" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-227"><a href="https://www.philabundance.org/find-food/food-map/">Food Map</a></li>
+</ul>
+</li>
+<li id="menu-item-168" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-168"><a href="https://www.philabundance.org/get-involved/">Get Involved</a>
+<ul class="sub-menu">
+	<li id="menu-item-161" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-161"><a href="https://www.philabundance.org/volunteer/">Volunteer</a></li>
+	<li id="menu-item-160" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-160"><a href="https://www.philabundance.org/get-involved/hunger-fundraisers/">Host a Fundraiser</a></li>
+	<li id="menu-item-231" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-231"><a href="https://www.philabundance.org/advocate/">Be an Advocate</a></li>
+	<li id="menu-item-232" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-232"><a href="https://www.philabundance.org/get-involved/donate-food/">Donate Food</a></li>
+	<li id="menu-item-233" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-233"><a href="https://www.philabundance.org/get-involved/donate-food/food-drives/">Host a Food Drive</a></li>
+	<li id="menu-item-234" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-234"><a href="https://www.philabundance.org/get-involved/help-rescue-food/">Help Rescue Food</a></li>
+	<li id="menu-item-235" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-235"><a href="https://www.philabundance.org/get-involved/partner-with-us/">Partner with Us</a></li>
+</ul>
+</li>
+<li id="menu-item-169" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-169"><a href="https://www.philabundance.org/donate/">Donate</a>
+<ul class="sub-menu">
+	<li id="menu-item-237" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-237"><a href="https://www.philabundance.org/donate/giving-societies/">Giving Societies</a></li>
+	<li id="menu-item-931" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-931"><a href="https://www.philabundance.org/donate/">Donate Now</a></li>
+	<li id="menu-item-1985" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1985"><a href="https://www.philabundance.org/get-involved/donate-food/">Donate Food</a></li>
+</ul>
+</li>
+<li id="menu-item-6010" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6010"><a href="https://www.philabundance.org/news-blog/">News</a></li>
+<li id="menu-item-166" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-166"><a href="https://www.philabundance.org/impact/">Our Impact</a></li>
+<li id="menu-item-170" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-170"><a href="https://www.philabundance.org/about/">About Us</a>
+<ul class="sub-menu">
+	<li id="menu-item-159" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-159"><a href="https://www.philabundance.org/about/leadership/">Leadership</a></li>
+	<li id="menu-item-240" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-240"><a href="https://www.philabundance.org/about/philabundance-community-kitchen/">Philabundance Community Kitchen</a></li>
+	<li id="menu-item-241" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-241"><a href="https://www.philabundance.org/about/philabundance-community-kitchen/pckatering/">PCKatering</a></li>
+	<li id="menu-item-6009" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6009"><a href="https://www.philabundance.org/upcycle/">Upcycle</a></li>
+	<li id="menu-item-6655" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6655"><a href="https://newton.newtonsoftware.com/career/CareerHome.action?clientId=8a78858b5e0ce0e4015e1a7690257957">Careers</a></li>
+	<li id="menu-item-238" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-238"><a href="https://www.philabundance.org/about/faqs/">FAQ</a></li>
+</ul>
+</li>
+<li id="menu-item-242" class="highlight menu-item menu-item-type-post_type menu-item-object-page menu-item-242"><a href="https://www.philabundance.org/donate/">Give Now</a></li>
+
+                                </ul>
+                            </nav>                           
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+</header>
+
+<nav id="mobile-nav">
+    <ul class="mobile-footer-menu">
+        <li id="menu-item-1816" class="donate menu-item menu-item-type-post_type menu-item-object-page menu-item-1816"><a href="https://www.philabundance.org/donate/">Donate</a></li>
+<li id="menu-item-1819" class="find-food menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-13 current_page_item menu-item-1819"><a href="https://www.philabundance.org/find-food/">Find Food</a></li>
+<li id="menu-item-1838" class="volunteer menu-item menu-item-type-post_type menu-item-object-page menu-item-1838"><a href="https://www.philabundance.org/volunteer/">Volunteer</a></li>
+<li id="menu-item-1824" class="get-involved menu-item menu-item-type-post_type menu-item-object-page menu-item-1824"><a href="https://www.philabundance.org/get-involved/">Get Involved</a></li>
+<li id="menu-item-1815" class="contact menu-item menu-item-type-post_type menu-item-object-page menu-item-1815"><a href="https://www.philabundance.org/contact/">Contact</a></li>
+
+    </ul>
+</nav>
+<main id="main-content"><section  class="module module-banner-search overlay-darken" style="background-image:url(https://www.philabundance.org/wp-content/uploads/2017/08/Banner-FindFood-1600x738.jpg)">
+    <div class="banner-wrap row align-middle align-center">
+        <div class="small-12 large-10 columns text-center">
+                        <h1 class="banner-title">Find Free Food Near You</h1>
+                         <div class="banner-description">
+                Enter your zip code to find free food resources at the locations closest to you.
+            </div>
+                                        <div class="widget-wrap">
+                    
+        <form action="https://www.philabundance.org/find-food/food-map/" method="post" id="wpsl-widget-form">
+                        <p>
+                <label for="wpsl-widget-search">Search by Zip Code</label>
+                <input type="text" name="wpsl-widget-search" placeholder="Zip Code" id="wpsl-widget-search" value="" >
+            </p>
+                        <p><input type="submit" value="Search"></p>
+        </form>
+        <style>#wpsl-widget-form label {display: block;}</style>
+        1
+                </div>
+                    
+        </div>
+    </div>
+</section>
+
+<section  class="module module-two-col-single">
+    <div class="row align-top align-middle full-width medium-collapse">
+         <div class="large-6 small-12 columns content-column">
+        <div class="content-block">
+                <a href="http://www.philabundance.org/find-food/free-farmers-markets/" >            <h3 class="section-title">Fresh Food For All</h3>
+        </a>        <div class="description"></div>
+         
+                            <a href="http://www.philabundance.org/find-food/free-farmers-markets/"  class="link arrow">Learn More</a>
+                        </div>
+        <div class="content-block">
+                <a href="http://www.philabundance.org/find-food/free-food-for-kids/" >            <h3 class="section-title">Free Food For Kids</h3>
+        </a>        <div class="description"></div>
+         
+                            <a href="http://www.philabundance.org/find-food/free-food-for-kids/"  class="link arrow">Learn More</a>
+                        </div>
+        <div class="content-block">
+                <a href="http://www.philabundance.org/find-food/food-support-for-seniors/" >            <h3 class="section-title">Free Food For Seniors</h3>
+        </a>        <div class="description"></div>
+         
+                            <a href="http://www.philabundance.org/find-food/food-support-for-seniors/"  class="link arrow">Learn More</a>
+                        </div>
+    </div> <div class="large-6 small-12 columns image-column">
+    <div class="image-wrap">
+        <img src="https://www.philabundance.org/wp-content/uploads/2018/01/find-food_two-column_998x1067_acf_cropped.jpg" alt="" />
+    </div>
+</div>     </div>
+
+</section>
+<section id="other-resources" class="module module-grid-links paper">
+    <div class="row column text-center">
+        <h2 class="section-title">Other <em>Resources</em></h2>
+    </div>
+    <div class="row small-up-1 medium-up-2 large-up-3 align-center" data-equalizer="link">
+                <div class="column column-block">
+            <a href=""  class="link-block text-center" data-equalizer-watch="link">
+                <div class="link-icon" style="background-image:url(https://www.philabundance.org/wp-content/uploads/2017/08/icon-pear.svg);"></div>
+                <div class="link-title">
+                    WHY Hunger Hotline
+                </div>
+                                <div class="link-description">
+                    Call 1-800-5-HUNGRY
+                </div>
+                             </a>
+        </div>
+                <div class="column column-block">
+            <a href="http://www.bcoc.org/" target="_blank" class="link-block text-center" data-equalizer-watch="link">
+                <div class="link-icon" style="background-image:url(https://www.philabundance.org/wp-content/uploads/2017/09/icon-broccoli.svg);"></div>
+                <div class="link-title">
+                    Bucks County Opportunity Council
+                </div>
+                                <div class="link-description">
+                    Call 215-345-8175
+                </div>
+                                 <div class="link arrow">Visit Site</div>
+                            </a>
+        </div>
+                <div class="column column-block">
+            <a href="https://chestercountyfoodbank.org/" target="_blank" class="link-block text-center" data-equalizer-watch="link">
+                <div class="link-icon" style="background-image:url(https://www.philabundance.org/wp-content/uploads/2017/08/icon-peach.svg);"></div>
+                <div class="link-title">
+                    Chester County Food Bank
+                </div>
+                                <div class="link-description">
+                    Call 610-873-6000
+                </div>
+                                 <div class="link arrow">Visit Site</div>
+                            </a>
+        </div>
+                <div class="column column-block">
+            <a href="https://www.hungercoalition.org/" target="_blank" class="link-block text-center" data-equalizer-watch="link">
+                <div class="link-icon" style="background-image:url(https://www.philabundance.org/wp-content/uploads/2017/09/icon-melon.svg);"></div>
+                <div class="link-title">
+                    Coalition Against Hunger
+                </div>
+                                <div class="link-description">
+                    Call 215-769-0659
+                </div>
+                                 <div class="link arrow">Visit Site</div>
+                            </a>
+        </div>
+                <div class="column column-block">
+            <a href="http://www.feedingamerica.org/" target="_blank" class="link-block text-center" data-equalizer-watch="link">
+                <div class="link-icon" style="background-image:url(https://www.philabundance.org/wp-content/uploads/2017/09/icon-beet.svg);"></div>
+                <div class="link-title">
+                    Feeding America
+                </div>
+                                 <div class="link arrow">Visit Site</div>
+                            </a>
+        </div>
+                <div class="column column-block">
+            <a href="http://foodbanksj.org/" target="_blank" class="link-block text-center" data-equalizer-watch="link">
+                <div class="link-icon" style="background-image:url(https://www.philabundance.org/wp-content/uploads/2017/09/icon-apple.svg);"></div>
+                <div class="link-title">
+                    Food Bank of South Jersey
+                </div>
+                                <div class="link-description">
+                    Call 856-662-4484
+                </div>
+                                 <div class="link arrow">Visit Site</div>
+                            </a>
+        </div>
+                <div class="column column-block">
+            <a href="http://www.pottstowncluster.org/" target="_blank" class="link-block text-center" data-equalizer-watch="link">
+                <div class="link-icon" style="background-image:url(https://www.philabundance.org/wp-content/uploads/2017/09/icon-banana.svg);"></div>
+                <div class="link-title">
+                    Pottstown Cluster
+                </div>
+                                <div class="link-description">
+                    Call 610-970-5995
+                </div>
+                                 <div class="link arrow">Visit Site</div>
+                            </a>
+        </div>
+                <div class="column column-block">
+            <a href="https://sharefoodprogram.org/" target="_blank" class="link-block text-center" data-equalizer-watch="link">
+                <div class="link-icon" style="background-image:url(https://www.philabundance.org/wp-content/uploads/2017/09/icon-squash.svg);"></div>
+                <div class="link-title">
+                    Share Food Program
+                </div>
+                                <div class="link-description">
+                    Call 215-223-2220
+                </div>
+                                 <div class="link arrow">Visit Site</div>
+                            </a>
+        </div>
+            </div>
+</section>
+<section  class="module module-grid-text paper">
+    <div class="row column text-center">
+        <h2 class="section-title">Common Questions</h2>
+    </div>
+    <div class="advanced-columns">
+                <div class="column-block">
+            <div class="text-block">
+                <div class="block-title">
+                    Where can I find food in my neighborhood?
+                </div>
+                <div class="block-text">
+                    <p>Use the above zip code finder to locate food near you. Philabundance also partners with WhyHunger to connect you with resources nearest to you. You can reach WhyHunger at 1-800-5-HUNGRY(486479).</p>
+
+                </div>
+            </div>
+        </div>
+                <div class="column-block">
+            <div class="text-block">
+                <div class="block-title">
+                    Do I need to be a U.S. citizen to get food assistance from you?
+                </div>
+                <div class="block-text">
+                    <p>Our free produce markets require <u data-redactor-tag="u">NO</u> proof or documentation. Our member agencies vary in their requirements. Use the zip code finder above to search for an agency near you.</p>
+
+                </div>
+            </div>
+        </div>
+                <div class="column-block">
+            <div class="text-block">
+                <div class="block-title">
+                    How can I apply for food stamps (SNAP)?
+                </div>
+                <div class="block-text">
+                    <p>Please call WhyHunger at 1-800-5-HUNGRY(486479) for more information.</p>
+
+                </div>
+            </div>
+        </div>
+                <div class="column-block">
+            <div class="text-block">
+                <div class="block-title">
+                    Can I lose my food stamps if I receive free food from Philabundance?
+                </div>
+                <div class="block-text">
+                    <p>NO. Receiving food at a Philabundance program or agency (including our free farmers markets/Fresh For Alls) will not affect your government benefits.</p>
+
+                </div>
+            </div>
+        </div>
+                <div class="column-block">
+            <div class="text-block">
+                <div class="block-title">
+                    Are you able to help me with anything other than food? Housing assistance? Employment resources?
+                </div>
+                <div class="block-text">
+                    <p>Philabundance does not offer assistance with those services but we have compiled <a href="http://www.philabundance.org/wp-content/uploads/2017/10/Food_Resource_Flier_5.11.17.pdf" target="_blank" rel="noopener">a list of resources, broken down by county. </a>Operators at WhyHunger 1-800-5-HUNGRY(486479) will also be able to connect you to local resources.</p>
+
+                </div>
+            </div>
+        </div>
+                <div class="column-block">
+            <div class="text-block">
+                <div class="block-title">
+                    I’m a senior – what kind of food assistance is available to me?
+                </div>
+                <div class="block-text">
+                    <p>As a senior, you can visit any of our agencies or free farmers markets. We also have programs specifically for seniors, including CSFP, a government-funded program providing older adults with a 30 pound box of food and 2 pounds of cheese monthly. They are also referred to as “Senior Boxes”. You do not have to be a U.S. citizen to receive senior boxes; you may use a resident alien card. Receiving food at a Philabundance program or agency (including CSFP) will not affect your government benefits.</p>
+
+                </div>
+            </div>
+        </div>
+                <div class="column-block">
+            <div class="text-block">
+                <div class="block-title">
+                    How and where can I get a senior box?
+                </div>
+                <div class="block-text">
+                    <p>There are several requirements that must be met to receive a CSFP box. Please call WhyHunger  at 1-800-5-HUNGRY(486479) for more information.</p>
+
+                </div>
+            </div>
+        </div>
+                <div class="column-block">
+            <div class="text-block">
+                <div class="block-title">
+                    Can I come to Philabundance to get food?
+                </div>
+                <div class="block-text">
+                    <p>Philabundance does not serve food or distribute food at our locations. You can find food at our agencies, at a free produce market and by using the zip code finder above, or by calling WhyHunger at 1-800-5-HUNGRY(486479).</p>
+
+                </div>
+            </div>
+        </div>
+            </div>
+</section><footer id="main-footer" class="cork">
+    <div id="footer-veggies" class="row full-width"></div>
+    <div id="footer-top" class="row">
+        <div class="columns large-9 small-12">
+            <div class="footer-nav">
+                                <div id="footer-nav">
+                    <ul class="menu align-top">
+                        <li id="menu-item-243" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-243"><a href="http://#">Information</a>
+<ul class="sub-menu">
+	<li id="menu-item-150" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-150"><a href="https://www.philabundance.org/news-blog/">News &#038; Blog</a></li>
+	<li id="menu-item-3550" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3550"><a href="https://www.philabundance.org/events/">Events</a></li>
+	<li id="menu-item-244" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-244"><a href="https://www.philabundance.org/about/faqs/">FAQ</a></li>
+	<li id="menu-item-3300" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3300"><a href="https://www.philabundance.org/wp-content/uploads/2017/10/PHLB-PrivacyPolicy.pdf">Privacy Policy</a></li>
+	<li id="menu-item-248" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-248"><a href="https://www.philabundance.org/sitemap/">Sitemap</a></li>
+</ul>
+</li>
+<li id="menu-item-245" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-245"><a href="http://#">Quick Links</a>
+<ul class="sub-menu">
+	<li id="menu-item-151" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-151"><a href="https://www.philabundance.org/contact/">Contact</a></li>
+	<li id="menu-item-2038" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2038"><a href="https://www.agencyexpress3.org/AgencyExpress30/NewLogin.aspx">AgencyExpress</a></li>
+	<li id="menu-item-4598" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4598"><a href="https://www.philabundance.org/about/aib-international-badges/">AIB International Badges</a></li>
+	<li id="menu-item-4880" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4880"><a href="http://www.philabundance.org/wp-content/uploads/2018/05/Philabundance-Form-990-9-30-17-UPDATED.pdf">FY17 990</a></li>
+	<li id="menu-item-4881" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4881"><a href="http://www.philabundance.org/wp-content/uploads/2018/07/FY17-Financial-Statements.pdf">FY17 Financial Statements</a></li>
+</ul>
+</li>
+
+                        <li>
+                            <a>Get in Touch</a>
+                            <ul>
+                                <p>3616 South Galloway Street<br />
+Philadelphia, PA 19148<br />
+P: (215) 339-0900<br />
+F: (215) 339-0924</p>
+
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                            </div>
+        </div>
+        <div class="columns large-3 small-12 footer-info">
+            <div class="row align-center">
+                <div class="columns large-12 medium-6 small-12 footer-social">
+                                                                        <a href="https://www.facebook.com/Philabundance/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                                    <a href="https://twitter.com/Philabundance" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                                    <a href="https://www.instagram.com/philabundance/?hl=en" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                                    <a href="https://www.linkedin.com/company-beta/360791" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                                                    <a href="https://www.youtube.com/channel/UCYaiX3vLIIc9PyspRo89yOg" target="_blank"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                                                            </div>
+                <div class="columns large-12 medium-6 small-12 footer-logos">
+                    <a href="http://www.feedingamerica.org" target="_blank"><img src="https://www.philabundance.org/wp-content/themes/push10custom/assets/imgs/feeding-america-logo.svg" alt="Philabundance is a proud member of Feeding America"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer-legal" class="row text-center full-width">
+        <div class="columns large-12">
+            <span>Copyright © 2018 Philabundance. All rights reserved. | <a href="http://www.push10.com" target="_blank">Web Design by Push10</a> | Privacy Policy »</span>
+        </div>
+    </div>
+</footer>
+</main>
+    </div>    <div class='advanced-browser-check' style='display:none;' data-url='{"abc_url":"https:\/\/www.philabundance.org\/wp-admin\/admin-ajax.php"}'></div><!-- Instagram Feed JS -->
+<script type="text/javascript">
+var sbiajaxurl = "https://www.philabundance.org/wp-admin/admin-ajax.php";
+</script>
+
+<!--BEGIN: TRACKING CODE MANAGER BY INTELLYWP.COM IN BODY//-->
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5NZPC6L"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<!--END: https://wordpress.org/plugins/tracking-code-manager IN BODY//--><link rel='stylesheet' id='font-awesome-css'  href='https://cdn.jsdelivr.net/fontawesome/4.7.0/css/font-awesome.min.css?ver=4.9.8' type='text/css' media='all' />
+<script type='text/javascript' src='https://www.philabundance.org/wp-content/themes/push10custom/bower_components/foundation-sites/dist/js/foundation.min.js?ver=0.46'></script>
+<script type='text/javascript' src='https://www.philabundance.org/wp-content/themes/push10custom/bower_components/foundation-sites/dist/js/plugins/foundation.reveal.min.js?ver=0.46'></script>
+<script type='text/javascript' src='https://www.philabundance.org/wp-content/themes/push10custom/bower_components/foundation-sites/dist/js/plugins/foundation.equalizer.min.js?ver=0.46'></script>
+<script type='text/javascript' src='https://www.philabundance.org/wp-content/themes/push10custom/bower_components/what-input/dist/what-input.min.js?ver=0.46'></script>
+<script type='text/javascript' src='https://www.philabundance.org/wp-content/themes/push10custom/bower_components/gsap/src/minified/TweenMax.min.js?ver=0.46'></script>
+<script type='text/javascript' src='https://www.philabundance.org/wp-content/themes/push10custom/bower_components/scrollmagic/scrollmagic/minified/ScrollMagic.min.js?ver=0.46'></script>
+<script type='text/javascript' src='https://www.philabundance.org/wp-content/themes/push10custom/bower_components/scrollmagic/scrollmagic/minified/plugins/animation.gsap.min.js?ver=0.46'></script>
+<script type='text/javascript' src='https://www.philabundance.org/wp-content/themes/push10custom/bower_components/scrollmagic/scrollmagic/minified/plugins/jquery.ScrollMagic.min.js?ver=0.46'></script>
+<script type='text/javascript' src='https://www.philabundance.org/wp-content/themes/push10custom/assets/js/main.js?ver=0.46'></script>
+<script type='text/javascript' src='https://www.philabundance.org/wp-content/themes/push10custom/p10modules/modules/header/js/scripts.js?ver=0.46'></script>
+<script type='text/javascript' src='https://www.philabundance.org/wp-includes/js/wp-embed.min.js?ver=4.9.8'></script>
+<script type='text/javascript' src='https://maps.google.com/maps/api/js?language=en&#038;region=us&#038;key=AIzaSyAA0WYeYkOq6ua9J71B1n0uEM48M_VqEOo&#038;libraries=places'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wpslWidgetSettings = {"autoComplete":"1","geocodeComponents":{"country":"US"},"autoLocate":"1","geoLocationTimout":"5000","filterPattern":["postal_code","postal_code_prefix,postal_code"]};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.philabundance.org/wp-content/plugins/wp-store-locator-widget/js/wpsl-widget.min.js?ver=1.1.0'></script>
+
+    <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"9db5671dcb","applicationID":"87792267","transactionName":"YlRUbEADXEIEARJcX1sed1tGC11fSgQHRA==","queueTime":0,"applicationTime":394,"atts":"ThNXGggZT0w=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
